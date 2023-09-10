@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #converter {
+            margin: 20px auto;
+            max-width: 400px;
+            padding: 20px;
+            border: 1px solid #130d0d;
+            border-radius: 5px;
+            background-color: #5178b3;
+        }
+        h1 {
+            color: #333;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #40ff00;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #c36c1a;
+        }
+    </style>
+</head>
+<body>
+    <div id="converter">
+        <h1>Temperature Converter</h1>
+        <input type="number" id="celsiusInput" placeholder="Celsius">
+        <button onclick="convertCelsiusToFahrenheit()">Convert to Fahrenheit</button>
+        <input type="number" id="fahrenheitInput" placeholder="Fahrenheit">
+        <button onclick="convertFahrenheitToCelsius()">Convert to Celsius</button>
+    </div>
+
+    <script>
+        function convertCelsiusToFahrenheit() {
+            const celsius = parseFloat(document.getElementById('celsiusInput').value);
+            const fahrenheit = (celsius * 9/5) + 32;
+            document.getElementById('fahrenheitInput').value = fahrenheit.toFixed(2);
+        }
+
+        function convertFahrenheitToCelsius() 
+        {
+            const fahrenheit = parseFloat(document.getElementById('fahrenheitInput').value);
+            const celsius = (fahrenheit - 32) * 5/9;
+            document.getElementById('celsiusInput').value = celsius.toFixed(2);
+        }
+    </script>
+</body>
+</html>
